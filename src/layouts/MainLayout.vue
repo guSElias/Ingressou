@@ -1,108 +1,47 @@
+<script setup lang="ts">
+import { ref, watch } from 'vue';
+
+import { useQuasar } from 'quasar';
+
+const $q = useQuasar();
+const currentTheme = ref(false);
+
+watch(
+  () => $q.dark.isActive,
+  (val) => {
+    currentTheme.value = val;
+  }
+);
+</script>
 <template>
   <q-layout view="lhh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
+        <q-toolbar-title>
+          <q-icon name="img:src/assets/ingressou-logo.svg" size="7rem" right />
+        </q-toolbar-title>
         <q-btn
           flat
           dense
           round
-          :color="currentTheme"
-          icon="account_circle"
-          @click="toggleLeftDrawer"
+          size="1rem"
+          :color="currentTheme ? 'dark' : 'secondary'"
+          :icon="currentTheme ? 'dark_mode' : 'light_mode'"
+          @click="$q.dark.toggle()"
         />
-
-        <q-toolbar-title>
-          <img
-            src="../assets/ingressou-logo.svg"
-            alt="Logo Ingressou"
-            style="width: 11.9rem; height: 5.6rem"
-          />
-        </q-toolbar-title>
-        <button @click="$q.dark.toggle()">{{ currentTheme }}</button>
+        <q-btn
+          flat
+          dense
+          round
+          size="1rem"
+          :color="currentTheme ? 'dark' : 'secondary'"
+          icon="account_circle"
+          @click="console.log('abrir modal')"
+        />
       </q-toolbar>
     </q-header>
-
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered>
-      <q-list>
-        <q-item-label header> Essential Links </q-item-label>
-
-        <EssentialLink
-          v-for="link in linksList"
-          :key="link.title"
-          v-bind="link"
-        />
-      </q-list>
-    </q-drawer>
-
     <q-page-container>
       <router-view />
     </q-page-container>
   </q-layout>
 </template>
-
-<script setup lang="ts">
-import { ref, watch } from 'vue';
-import EssentialLink, {
-  EssentialLinkProps,
-} from 'components/EssentialLink.vue';
-import { useQuasar } from 'quasar';
-
-const linksList: EssentialLinkProps[] = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev',
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework',
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev',
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev',
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev',
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev',
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev',
-  },
-];
-
-const leftDrawerOpen = ref(false);
-function toggleLeftDrawer() {
-  leftDrawerOpen.value = !leftDrawerOpen.value;
-}
-const $q = useQuasar();
-const currentTheme = ref();
-
-watch(
-  () => $q.dark.isActive,
-  (val) => {
-    currentTheme.value = val ? 'dark' : 'secondary';
-  }
-);
-</script>
