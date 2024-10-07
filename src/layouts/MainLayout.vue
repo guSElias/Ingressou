@@ -2,9 +2,15 @@
 import { ref, watch } from 'vue';
 
 import { useQuasar } from 'quasar';
+import LoginModal from 'src/components/loginModal/LoginModal.vue';
 
 const $q = useQuasar();
 const currentTheme = ref(false);
+const loginModal = ref();
+
+function openDialog() {
+  loginModal.value.openDialog()
+}
 
 watch(
   () => $q.dark.isActive,
@@ -36,12 +42,14 @@ watch(
           size="1rem"
           :color="currentTheme ? 'dark' : 'secondary'"
           icon="account_circle"
-          @click="console.log('abrir modal')"
+          @click="openDialog"
         />
       </q-toolbar>
     </q-header>
     <q-page-container>
-      <router-view />
+      <router-view>
+        <LoginModal ref="loginModal" :is-dark="currentTheme"/>
+      </router-view>
     </q-page-container>
   </q-layout>
 </template>
