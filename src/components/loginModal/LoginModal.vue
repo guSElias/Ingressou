@@ -3,20 +3,18 @@ import { ref, watch } from 'vue';
 import { useQuasar } from 'quasar';
 
 const $q = useQuasar();
-
 const isDark = ref($q.dark.isActive);
 
-watch(
-  () => $q.dark.isActive,
-  (val) => {
-    isDark.value = val;
-  }
-);
 const form = ref({
   email: '',
   password: '',
 });
 const showpassword = ref(false);
+
+function onSubmit() {
+  console.log('Enviado')
+}
+
 const showDialog = ref(false);
 function openDialog() {
   showDialog.value = true;
@@ -25,6 +23,13 @@ function openDialog() {
 defineExpose({
   openDialog,
 });
+
+watch(
+  () => $q.dark.isActive,
+  (val) => {
+    isDark.value = val;
+  }
+);
 </script>
 <template>
   <q-dialog backdrop-filter="blur(4px)" v-model="showDialog">
@@ -49,7 +54,7 @@ defineExpose({
       </q-card-section>
       <q-card-section class="column justify-center q-pt-none">
         <div class="text-h5 text-center text-primary">Login</div>
-        <q-form class="justify-center q-mx-xl">
+        <q-form class="justify-center q-mx-xl" @submit="onSubmit">
           <div class="col-md-4 col-sm-6 col-xs-10 q-pb-md">
             <q-input label="Email" v-model="form.email" type="email" />
             <q-input
