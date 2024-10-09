@@ -11,8 +11,19 @@ const form = ref({
 });
 const showpassword = ref(false);
 
+const emailRules = [(val: string) => !!val || 'Campo obrigatório'];
+
+const passwordRules = [
+  (val: string) => !!val || 'Campo obrigatório',
+  (val: string) =>
+    val.length >= 7 || 'Campo senha deve conter ao menos 7 caracteres',
+  (val: string) =>
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])/.test(val) ||
+    'A senha deve conter de uma letra maiúscula, uma minúscula, um número e um símbolo.',
+];
+
 function onSubmit() {
-  console.log('Enviado')
+  console.log('Enviado');
 }
 
 const showDialog = ref(false);
@@ -56,11 +67,17 @@ watch(
         <div class="text-h5 text-center text-primary">Login</div>
         <q-form class="justify-center q-mx-xl" @submit="onSubmit">
           <div class="col-md-4 col-sm-6 col-xs-10 q-pb-md">
-            <q-input label="Email" v-model="form.email" type="email" />
+            <q-input
+              label="Email"
+              v-model="form.email"
+              type="email"
+              :rules="emailRules"
+            />
             <q-input
               label="Senha"
               v-model="form.password"
               :type="showpassword ? 'text' : 'password'"
+              :rules="passwordRules"
             >
               <template v-slot:append>
                 <q-icon
