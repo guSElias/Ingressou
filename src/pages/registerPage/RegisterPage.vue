@@ -4,6 +4,5 @@
 
 <template>
   <q-page class="row items-center justify-evenly">
-    evento
   </q-page>
 </template>

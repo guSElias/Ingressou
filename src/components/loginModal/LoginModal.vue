@@ -19,7 +19,7 @@ const passwordRules = [
     val.length >= 7 || 'Campo senha deve conter ao menos 7 caracteres',
   (val: string) =>
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])/.test(val) ||
-    'A senha deve conter de uma letra maiúscula, uma minúscula, um número e um símbolo.',
+    'A senha deve conter ao menos uma letra maiúscula, minúscula, um número e um símbolo.',
 ];
 
 function onSubmit() {
@@ -88,7 +88,12 @@ watch(
               </template>
             </q-input>
             <div class="q-pt-md q-gutter-md row justify-end">
-              <q-btn label="cadastrar" type="reset" color="primary" outline />
+              <q-btn
+                to="/cadastro"
+                label="cadastrar"
+                outline
+                color="primary"
+              />
               <q-btn label="entrar" type="submit" color="primary" />
             </div>
           </div>
