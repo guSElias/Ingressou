@@ -9,7 +9,7 @@ const currentTheme = ref(false);
 const loginModal = ref();
 
 function openDialog() {
-  loginModal.value.openDialog()
+  loginModal.value.openDialog();
 }
 
 watch(
@@ -24,7 +24,14 @@ watch(
     <q-header elevated>
       <q-toolbar>
         <q-toolbar-title>
-          <q-icon name="img:src/assets/ingressou-logo.svg" size="7rem" right />
+          <q-btn flat to="/" class="q-px-sm">
+            <img
+              src="src/assets/ingressou-logo.svg"
+              alt="ingressou logo"
+              class="q-py-sm"
+              style="width: 12rem; height: 5rem"
+            />
+          </q-btn>
         </q-toolbar-title>
         <q-btn
           flat
@@ -47,9 +54,8 @@ watch(
       </q-toolbar>
     </q-header>
     <q-page-container>
-      <router-view>
-        <LoginModal ref="loginModal" :is-dark="currentTheme"/>
-      </router-view>
+      <LoginModal ref="loginModal" :is-dark="currentTheme" />
+      <router-view />
     </q-page-container>
   </q-layout>
 </template>
