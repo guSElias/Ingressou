@@ -20,12 +20,10 @@ const eventoExemplo: Evento = {
 const formatarDataEvento = (data: Date): string => {
   const diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
   const diaSemana = diasSemana[data.getUTCDay()];
-
   const dia = String(data.getUTCDate()).padStart(2, '0');
   const mes = String(data.getUTCMonth() + 1).padStart(2, '0');
   const horas = String(data.getUTCHours()).padStart(2, '0');
   const minutos = String(data.getUTCMinutes()).padStart(2, '0');
-
   return `${diaSemana}, ${dia}/${mes} - ${horas}:${minutos}h`;
 };
 const dtEventoFormatado = formatarDataEvento(eventoExemplo.dtEvento);
@@ -40,14 +38,14 @@ const dtEventoFormatado = formatarDataEvento(eventoExemplo.dtEvento);
     <q-img
       :src="eventoExemplo.imagemURL"
       width="80%"
-      class="shadow-box shadow-7"
-      style="height: 300px"
+      class="shadow-box shadow-3"
+      style="max-height: 300px"
       fit="fill"
     />
     <div class="event-info row">
       <span>{{ dtEventoFormatado }}</span>
       <div class="text-primary text-bold justify-center">
-        <q-icon name="location_on" color="primary" size="1.8rem"/>
+        <q-icon name="location_on" color="primary" size="1.8rem" />
         <span>{{ eventoExemplo.localEvento }}</span>
       </div>
       <EventAge :age="eventoExemplo.faixaEtaria" class="q-ml-auto" />

@@ -24,7 +24,7 @@ watch(
     <q-header elevated>
       <q-toolbar>
         <q-toolbar-title>
-          <q-btn flat to="/" class="q-px-sm">
+          <q-btn flat to="/" class="q-px-none">
             <img
               src="src/assets/ingressou-logo.svg"
               alt="ingressou logo"
