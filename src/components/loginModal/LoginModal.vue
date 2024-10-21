@@ -44,24 +44,22 @@ watch(
 </script>
 <template>
   <q-dialog backdrop-filter="blur(4px)" v-model="showDialog">
-    <q-card style="width: 400px; max-width: 80vw">
+    <q-card style="width: 25rem; max-width: 80vw">
       <q-card-section
-        class="row justify-center q-pa-none"
+        class="row justify-center q-pa-none relative-position"
         style="max-height: 8rem"
       >
         <q-icon
           v-if="isDark"
           name="img:src/assets/ingressou-logo-dark.svg"
           size="10rem"
-          height="120"
         />
         <q-icon
           v-else
           name="img:src/assets/ingressou-logo.svg"
           size="10rem"
-          height="120"
         />
-        <q-btn icon="close" flat color="primary" v-close-popup />
+        <q-btn icon="close" flat color="primary" class="absolute-top-right q-ma-sm" v-close-popup />
       </q-card-section>
       <q-card-section class="column justify-center q-pt-none">
         <div class="text-h5 text-center text-primary">Login</div>
