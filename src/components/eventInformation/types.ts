@@ -7,8 +7,8 @@ export default interface Evento {
   localEvento: string,
   faixaEtaria: number,
   imagemURL: string,
-  aberturaEvento: Date,
-  InicioEvento: string,
+  aberturaEvento: string,
+  inicioEvento: string,
   capacidade: number,
   qtdIngressos: number,
 }

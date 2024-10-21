@@ -25,5 +25,5 @@ onMounted(() => {
 });
 </script>
 <template>
-  <q-icon :name="'img:' + ageCard" size="3rem" right />
+  <q-icon :name="'img:' + ageCard" size="2.5rem" right />
 </template>
