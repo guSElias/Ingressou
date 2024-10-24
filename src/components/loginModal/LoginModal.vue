@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
 import { useQuasar } from 'quasar';
+import PasswordInput from '../passwordInput/PasswordInput.vue';
 
 const $q = useQuasar();
 const isDark = ref($q.dark.isActive);
@@ -9,7 +10,6 @@ const form = ref({
   email: '',
   password: '',
 });
-const showpassword = ref(false);
 
 const emailRules = [(val: string) => !!val || 'Campo obrigatório'];
 
@@ -54,12 +54,14 @@ watch(
           name="img:src/assets/ingressou-logo-dark.svg"
           size="10rem"
         />
-        <q-icon
-          v-else
-          name="img:src/assets/ingressou-logo.svg"
-          size="10rem"
+        <q-icon v-else name="img:src/assets/ingressou-logo.svg" size="10rem" />
+        <q-btn
+          icon="close"
+          flat
+          color="primary"
+          class="absolute-top-right q-ma-sm"
+          v-close-popup
         />
-        <q-btn icon="close" flat color="primary" class="absolute-top-right q-ma-sm" v-close-popup />
       </q-card-section>
       <q-card-section class="column justify-center q-pt-none">
         <div class="text-h5 text-center text-primary">Login</div>
@@ -71,27 +73,13 @@ watch(
               type="email"
               :rules="emailRules"
             />
-            <q-input
-              label="Senha"
-              v-model="form.password"
-              :type="showpassword ? 'text' : 'password'"
+            <PasswordInput
+              label="senha"
+              :model="form.password"
               :rules="passwordRules"
-            >
-              <template v-slot:append>
-                <q-icon
-                  :name="showpassword ? 'visibility' : 'visibility_off'"
-                  class="cursor-pointer"
-                  @click="showpassword = !showpassword"
-                />
-              </template>
-            </q-input>
+            />
             <div class="q-pt-md q-gutter-md row justify-end">
-              <q-btn
-                to="/cadastro"
-                label="cadastrar"
-                outline
-                color="primary"
-              />
+              <q-btn to="/cadastro" label="cadastrar" outline color="primary" />
               <q-btn label="entrar" type="submit" color="primary" />
             </div>
           </div>
