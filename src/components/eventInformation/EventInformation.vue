@@ -2,27 +2,28 @@
 import { ref } from 'vue';
 import EventAge from './eventAge/EventAge.vue';
 import eventoExemplo from './eventAge/testEvent';
+import EventPayment from '../eventPayment/EventPayment.vue';
+import formatarDataEvento from 'src/util/formatarData';
 const showMore = ref(true);
+const paymentModal = ref();
 
 function toggleShowMore() {
   showMore.value = !showMore.value;
 }
-
-const formatarDataEvento = (data: Date): string => {
-  const diasSemana = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
-  const diaSemana = diasSemana[data.getUTCDay()];
-  const dia = String(data.getUTCDate()).padStart(2, '0');
-  const mes = String(data.getUTCMonth() + 1).padStart(2, '0');
-  return `${diaSemana}, ${dia}/${mes} - ${eventoExemplo.aberturaEvento}`;
-};
-const dtEventoFormatado = formatarDataEvento(eventoExemplo.dtEvento);
+function buyTicket() {
+  paymentModal.value.openDialog();
+}
+const dtEventoFormatado = formatarDataEvento(
+  eventoExemplo.dtEvento,
+  eventoExemplo.inicioEvento
+);
 </script>
 
 <template>
   <div class="text-center">
     <div class="header">
       <p class="text-h4 q-my-md">{{ eventoExemplo.nomeEvento }}</p>
-      <q-btn icon="arrow_back" flat class="q-ml-xs"></q-btn>
+      <q-btn icon="arrow_back" flat class="q-ml-xs" to="/" />
     </div>
     <q-img
       :src="eventoExemplo.imagemURL"
@@ -68,10 +69,12 @@ const dtEventoFormatado = formatarDataEvento(eventoExemplo.dtEvento);
           label="comprar"
           text-color="dark"
           size="lg"
+          @click="buyTicket"
         />
       </div>
     </div>
   </div>
+  <EventPayment ref="paymentModal" />
 </template>
 <style scoped lang="scss">
 .header {

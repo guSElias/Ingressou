@@ -54,7 +54,7 @@ watch(
       </q-toolbar>
     </q-header>
     <q-page-container>
-      <LoginModal ref="loginModal" :is-dark="currentTheme" />
+      <LoginModal ref="loginModal" />
       <router-view />
     </q-page-container>
   </q-layout>

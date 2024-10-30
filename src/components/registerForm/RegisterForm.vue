@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import PasswordInput from '../passwordInput/PasswordInput.vue';
-import { date } from 'quasar';
 
 const form = ref({
   nome: '',
