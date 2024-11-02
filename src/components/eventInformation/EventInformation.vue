@@ -14,19 +14,19 @@ function buyTicket() {
   paymentModal.value.openDialog();
 }
 const dtEventoFormatado = formatarDataEvento(
-  eventoExemplo.dtEvento,
-  eventoExemplo.inicioEvento
+  eventoExemplo.dataEvento,
+  eventoExemplo.horaAbertura
 );
 </script>
 
 <template>
   <div class="text-center">
     <div class="header">
-      <p class="text-h4 q-my-md">{{ eventoExemplo.nomeEvento }}</p>
+      <p class="text-h4 q-my-md">{{ eventoExemplo.nome }}</p>
       <q-btn icon="arrow_back" flat class="q-ml-xs" to="/" />
     </div>
     <q-img
-      :src="eventoExemplo.imagemURL"
+      :src="eventoExemplo.imagemUrl"
       width="70%"
       class="shadow-box shadow-3"
       fit="fill"
@@ -49,7 +49,7 @@ const dtEventoFormatado = formatarDataEvento(
       <div class="col informacoes-gerais">
         <span class="text-h5 text-bold q-mb-sm">Informações Gerais:</span>
         <span class="text-subtitle1 text-bold">
-          {{ 'Início previsto: ' + eventoExemplo.inicioEvento }}
+          {{ 'Início previsto: ' + eventoExemplo.horaInicio }}
         </span>
         <span :class="showMore ? 'short-text' : 'full-text'">
           {{ eventoExemplo.descricao }}

@@ -12,12 +12,12 @@ const props = defineProps<EventCardProps>();
     class="q-ma-xs"
     style="max-width: 20rem"
   >
-    <img :src="card.imagemURL" />
+    <img :src="card.imagemUrl" />
     <q-card-section>
-      <div class="text-h6">{{ card.nomeEvento }}</div>
+      <div class="text-h6">{{ card.nome }}</div>
       <div class="row q-gutter-sm text-subtitle3">
         <span>
-          {{ formatarDataEvento(card.dtEvento, card.aberturaEvento) }}
+          {{ formatarDataEvento(card.dataEvento, card.horaAbertura) }}
         </span>
         <div class="text-primary text-bold justify-center">
           <q-icon

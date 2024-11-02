@@ -1,19 +1,17 @@
-import Evento from '../types';
+import Evento from 'src/router/interfaces/Evento';
 
 const eventoExemplo: Evento = {
-  cdevento: 1,
-  tipoEvento: 'Concerto',
-  descricao: 'Lorem',
-  dtEvento: new Date('2024-12-01'),
-  nomeEvento: 'Concerto de Verão',
-  localEvento: 'Parque Central',
-  faixaEtaria: 0,
-  imagemURL:
-    'https://me-gestao-imagens.s3.amazonaws.com/minhaentrada/gestao/fotos/24166_banner6.jpg',
-  aberturaEvento: '16:00',
-  inicioEvento: '19:00',
-  capacidade: 5000,
-  qtdIngressos: 3000,
+  id: 1,
+  nome: 'Festa',
+  descricao: 'Uma festa incrível!',
+  dataEvento: '2024-12-25',
+  localEvento: 'Senai',
+  faixaEtaria: 18,
+  horaAbertura: '17:00',
+  horaInicio: '18:00',
+  capacidade: 500,
+  imagemUrl: '',
+  quantidadeIngressos: 499,
 };
 
 export default eventoExemplo;
