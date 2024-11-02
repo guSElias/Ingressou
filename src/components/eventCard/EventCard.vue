@@ -7,8 +7,8 @@ const props = defineProps<EventCardProps>();
 
 <template>
   <q-card
-    v-for="(card, index) in props.cards"
-    :key="index"
+    v-for="card in props.cards"
+    :key="card.id"
     class="q-ma-xs"
     style="max-width: 20rem"
   >

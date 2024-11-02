@@ -2,7 +2,7 @@ export default interface Evento {
   id: number;
   nome: string;
   descricao: string;
-  dataEvento: string;
+  dataEvento: Date;
   localEvento: string;
   faixaEtaria: number;
   horaAbertura: string;

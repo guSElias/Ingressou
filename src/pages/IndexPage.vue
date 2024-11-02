@@ -1,11 +1,23 @@
 <script setup lang="ts">
+import http from 'src/api';
 import EventCard from 'src/components/eventCard/EventCard.vue';
-import eventosExemplo from 'src/components/eventCard/testEvents';
+import type Evento from 'src/router/interfaces/Evento';
+import { onMounted, ref } from 'vue';
+
+const eventos = ref<Evento[]>([]);
+
+onMounted(async () => {
+  const response = await http.get('/api/eventos/listar');
+  eventos.value = response.data.map((evento: Evento) => ({
+    ...evento,
+    dataEvento: new Date(evento.dataEvento),
+  }));
+});
 </script>
 <template>
   <q-page class="row items-center justify-evenly q-pa-md">
     <div class="eventos">
-      <EventCard :cards="eventosExemplo" />
+      <EventCard :cards="eventos" />
     </div>
     <q-btn color="primary" label="ver mais" />
   </q-page>

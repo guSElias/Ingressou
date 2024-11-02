@@ -6,7 +6,7 @@ export default interface Evento {
   nomeEvento: string,
   localEvento: string,
   faixaEtaria: number,
-  imagemURL: string,
+  imagemUrl: string,
   aberturaEvento: string,
   inicioEvento: string,
   capacidade: number,

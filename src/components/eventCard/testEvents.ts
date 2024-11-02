@@ -9,7 +9,7 @@ const eventosExemplo: Evento[] = [
     nomeEvento: 'Concerto de Verão',
     localEvento: 'Parque Central',
     faixaEtaria: 0,
-    imagemURL:
+    imagemUrl:
       'https://me-gestao-imagens.s3.amazonaws.com/minhaentrada/gestao/fotos/24166_banner6.jpg',
     aberturaEvento: '16:00',
     inicioEvento: '19:00',
@@ -25,7 +25,7 @@ const eventosExemplo: Evento[] = [
     nomeEvento: 'Jazz no Parque',
     localEvento: 'Praça da Música',
     faixaEtaria: 0,
-    imagemURL:
+    imagemUrl:
     'https://me-gestao-imagens.s3.amazonaws.com/minhaentrada/gestao/fotos/24166_banner6.jpg',
     aberturaEvento: '18:00',
     inicioEvento: '20:00',
@@ -40,7 +40,7 @@ const eventosExemplo: Evento[] = [
     nomeEvento: 'Turnê Pop Rock',
     localEvento: 'Arena Central',
     faixaEtaria: 16,
-    imagemURL:
+    imagemUrl:
     'https://me-gestao-imagens.s3.amazonaws.com/minhaentrada/gestao/fotos/24166_banner6.jpg',
     aberturaEvento: '19:00',
     inicioEvento: '21:00',
@@ -55,7 +55,7 @@ const eventosExemplo: Evento[] = [
     nomeEvento: 'Noite Clássica',
     localEvento: 'Parque da Harmonia',
     faixaEtaria: 0,
-    imagemURL:
+    imagemUrl:
     'https://me-gestao-imagens.s3.amazonaws.com/minhaentrada/gestao/fotos/24166_banner6.jpg',
     aberturaEvento: '17:00',
     inicioEvento: '19:30',
@@ -71,7 +71,7 @@ const eventosExemplo: Evento[] = [
     nomeEvento: 'Gastro Fest',
     localEvento: 'Parque Gastronômico',
     faixaEtaria: 0,
-    imagemURL:
+    imagemUrl:
     'https://me-gestao-imagens.s3.amazonaws.com/minhaentrada/gestao/fotos/24166_banner6.jpg',
     aberturaEvento: '12:00',
     inicioEvento: '12:00',
@@ -86,7 +86,7 @@ const eventosExemplo: Evento[] = [
     nomeEvento: 'Transformação Pessoal',
     localEvento: 'Centro de Convenções',
     faixaEtaria: 18,
-    imagemURL:
+    imagemUrl:
     'https://me-gestao-imagens.s3.amazonaws.com/minhaentrada/gestao/fotos/24166_banner6.jpg',
     aberturaEvento: '09:00',
     inicioEvento: '10:00',
@@ -101,7 +101,7 @@ const eventosExemplo: Evento[] = [
     nomeEvento: 'Arte Moderna',
     localEvento: 'Museu de Arte',
     faixaEtaria: 0,
-    imagemURL:
+    imagemUrl:
     'https://me-gestao-imagens.s3.amazonaws.com/minhaentrada/gestao/fotos/24166_banner6.jpg',
     aberturaEvento: '10:00',
     inicioEvento: '10:00',
@@ -116,7 +116,7 @@ const eventosExemplo: Evento[] = [
     nomeEvento: 'Cinema na Praça',
     localEvento: 'Praça Central',
     faixaEtaria: 12,
-    imagemURL:
+    imagemUrl:
     'https://me-gestao-imagens.s3.amazonaws.com/minhaentrada/gestao/fotos/24166_banner6.jpg',
     aberturaEvento: '18:00',
     inicioEvento: '19:00',
@@ -131,7 +131,7 @@ const eventosExemplo: Evento[] = [
     nomeEvento: 'Fotografia Criativa',
     localEvento: 'Estúdio Artístico',
     faixaEtaria: 15,
-    imagemURL:
+    imagemUrl:
     'https://me-gestao-imagens.s3.amazonaws.com/minhaentrada/gestao/fotos/24166_banner6.jpg',
     aberturaEvento: '14:00',
     inicioEvento: '15:00',
@@ -147,7 +147,7 @@ const eventosExemplo: Evento[] = [
     nomeEvento: 'Inova Tech',
     localEvento: 'Centro Tecnológico',
     faixaEtaria: 18,
-    imagemURL:
+    imagemUrl:
     'https://me-gestao-imagens.s3.amazonaws.com/minhaentrada/gestao/fotos/24166_banner6.jpg',
     aberturaEvento: '08:00',
     inicioEvento: '09:00',
