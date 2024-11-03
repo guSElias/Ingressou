@@ -26,7 +26,7 @@ const eventosExemplo: Evento[] = [
     localEvento: 'Praça da Música',
     faixaEtaria: 0,
     imagemUrl:
-    'https://me-gestao-imagens.s3.amazonaws.com/minhaentrada/gestao/fotos/24166_banner6.jpg',
+      'https://me-gestao-imagens.s3.amazonaws.com/minhaentrada/gestao/fotos/24166_banner6.jpg',
     aberturaEvento: '18:00',
     inicioEvento: '20:00',
     capacidade: 4000,
@@ -41,7 +41,7 @@ const eventosExemplo: Evento[] = [
     localEvento: 'Arena Central',
     faixaEtaria: 16,
     imagemUrl:
-    'https://me-gestao-imagens.s3.amazonaws.com/minhaentrada/gestao/fotos/24166_banner6.jpg',
+      'https://me-gestao-imagens.s3.amazonaws.com/minhaentrada/gestao/fotos/24166_banner6.jpg',
     aberturaEvento: '19:00',
     inicioEvento: '21:00',
     capacidade: 10000,
@@ -56,7 +56,7 @@ const eventosExemplo: Evento[] = [
     localEvento: 'Parque da Harmonia',
     faixaEtaria: 0,
     imagemUrl:
-    'https://me-gestao-imagens.s3.amazonaws.com/minhaentrada/gestao/fotos/24166_banner6.jpg',
+      'https://me-gestao-imagens.s3.amazonaws.com/minhaentrada/gestao/fotos/24166_banner6.jpg',
     aberturaEvento: '17:00',
     inicioEvento: '19:30',
     capacidade: 6000,
@@ -72,7 +72,7 @@ const eventosExemplo: Evento[] = [
     localEvento: 'Parque Gastronômico',
     faixaEtaria: 0,
     imagemUrl:
-    'https://me-gestao-imagens.s3.amazonaws.com/minhaentrada/gestao/fotos/24166_banner6.jpg',
+      'https://me-gestao-imagens.s3.amazonaws.com/minhaentrada/gestao/fotos/24166_banner6.jpg',
     aberturaEvento: '12:00',
     inicioEvento: '12:00',
     capacidade: 2000,
@@ -87,7 +87,7 @@ const eventosExemplo: Evento[] = [
     localEvento: 'Centro de Convenções',
     faixaEtaria: 18,
     imagemUrl:
-    'https://me-gestao-imagens.s3.amazonaws.com/minhaentrada/gestao/fotos/24166_banner6.jpg',
+      'https://me-gestao-imagens.s3.amazonaws.com/minhaentrada/gestao/fotos/24166_banner6.jpg',
     aberturaEvento: '09:00',
     inicioEvento: '10:00',
     capacidade: 300,
@@ -102,7 +102,7 @@ const eventosExemplo: Evento[] = [
     localEvento: 'Museu de Arte',
     faixaEtaria: 0,
     imagemUrl:
-    'https://me-gestao-imagens.s3.amazonaws.com/minhaentrada/gestao/fotos/24166_banner6.jpg',
+      'https://me-gestao-imagens.s3.amazonaws.com/minhaentrada/gestao/fotos/24166_banner6.jpg',
     aberturaEvento: '10:00',
     inicioEvento: '10:00',
     capacidade: 1000,
@@ -117,7 +117,7 @@ const eventosExemplo: Evento[] = [
     localEvento: 'Praça Central',
     faixaEtaria: 12,
     imagemUrl:
-    'https://me-gestao-imagens.s3.amazonaws.com/minhaentrada/gestao/fotos/24166_banner6.jpg',
+      'https://me-gestao-imagens.s3.amazonaws.com/minhaentrada/gestao/fotos/24166_banner6.jpg',
     aberturaEvento: '18:00',
     inicioEvento: '19:00',
     capacidade: 500,
@@ -132,7 +132,7 @@ const eventosExemplo: Evento[] = [
     localEvento: 'Estúdio Artístico',
     faixaEtaria: 15,
     imagemUrl:
-    'https://me-gestao-imagens.s3.amazonaws.com/minhaentrada/gestao/fotos/24166_banner6.jpg',
+      'https://me-gestao-imagens.s3.amazonaws.com/minhaentrada/gestao/fotos/24166_banner6.jpg',
     aberturaEvento: '14:00',
     inicioEvento: '15:00',
     capacidade: 50,
@@ -148,7 +148,7 @@ const eventosExemplo: Evento[] = [
     localEvento: 'Centro Tecnológico',
     faixaEtaria: 18,
     imagemUrl:
-    'https://me-gestao-imagens.s3.amazonaws.com/minhaentrada/gestao/fotos/24166_banner6.jpg',
+      'https://me-gestao-imagens.s3.amazonaws.com/minhaentrada/gestao/fotos/24166_banner6.jpg',
     aberturaEvento: '08:00',
     inicioEvento: '09:00',
     capacidade: 2000,

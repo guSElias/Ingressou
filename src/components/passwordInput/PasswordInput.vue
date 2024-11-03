@@ -1,12 +1,23 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import PasswordInputProps from './types';
 
-const showpassword = ref(false);
-
 const props = defineProps<PasswordInputProps>();
-const inputModel = props.model;
+const emit = defineEmits(['update:modelValue']);
+
+// `inputModel` para sincronizar com `modelValue`
+const inputModel = ref(props.modelValue);
+const showpassword = ref(false); // Adiciona `showpassword` como uma referência reativa
+
+watch(inputModel, (val) => emit('update:modelValue', val));
+watch(
+  () => props.modelValue,
+  (val) => {
+    inputModel.value = val;
+  }
+);
 </script>
+
 <template>
   <q-input
     :label="props.label"
