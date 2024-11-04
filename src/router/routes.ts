@@ -7,12 +7,17 @@ const routes: RouteRecordRaw[] = [
     children: [{ path: '', component: () => import('pages/IndexPage.vue') }],
   },
   {
-    path: '/evento',
+    path: '/evento/:id',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/eventPage/EventPage.vue') },
+      {
+        path: '',
+        component: () =>
+          import('src/components/eventInformation/EventInformation.vue'), // Corrija o caminho aqui se necessário
+      },
     ],
   },
+
   {
     path: '/cadastro',
     component: () => import('layouts/MainLayout.vue'),

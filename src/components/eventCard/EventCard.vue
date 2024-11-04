@@ -36,7 +36,7 @@ const props = defineProps<EventCardProps>();
         color="primary"
         label="comprar"
         text-color="dark"
-        to="evento"
+        :to="{ path: '/evento/' + card.id }"
       />
     </q-card-section>
   </q-card>
