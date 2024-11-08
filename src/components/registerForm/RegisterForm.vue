@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import PasswordInput from '../passwordInput/PasswordInput.vue';
+// import PasswordInput from '../passwordInput/PasswordInput.vue';
 
+const emit = defineEmits(['register']);
 const form = ref({
   nome: '',
   email: '',
@@ -27,29 +28,26 @@ const passwordRules = [
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])/.test(val) ||
     'A senha deve conter ao menos uma letra maiúscula, minúscula, um número e um símbolo.',
 ];
-const passwordConfirmRules = [
-  (val: string) => val == form.value.senha || 'As senhas devem ser iguais.',
-];
-const valorIdade = () => {
-  return 1 + 1;
-};
+// const passwordConfirmRules = [
+//   (val: string) => val == form.value.senha || 'As senhas devem ser iguais.',
+// ];
+
 function register() {
-  console.log('teste');
   const payload = {
-    NMUSUARIO: form.value.nome,
-    DSCIDADE: form.value.cidade,
-    DSESTADO: form.value.estado,
-    NUTELEFONE: form.value.telefone,
-    NUIDADE: valorIdade,
-    DSEMAIL: form.value.email,
-    DSSENHA: form.value.senha,
-    DOCUMENTO: form.value.documento,
+    nomeUsuario: form.value.nome,
+    cidade: form.value.cidade,
+    estado: form.value.estado,
+    telefone: form.value.telefone,
+    idade: 10,
+    email: form.value.email,
+    senha: form.value.senha,
+    documento: form.value.documento,
   };
-  console.log(payload);
+  emit('register', payload);
 }
 </script>
 <template>
-  <q-form class="justify-center wrap q-ma-md" @submit="register">
+  <q-form class="justify-center wrap" @submit="register">
     <q-input label="Nome" v-model="form.nome" type="text" :rules="nomeRules" />
     <q-input
       label="Email"
@@ -89,13 +87,21 @@ function register() {
       type="text"
       :rules="estadoRules"
     />
-    <PasswordInput label="Senha" :model="form.senha" :rules="passwordRules" />
-    <PasswordInput
+    <q-input
+      label="Senha"
+      v-model="form.senha"
+      type="text"
+      :rules="passwordRules"
+    />
+    <q-input label="Confirmar senha" type="text" v-model="form.confirmarSenha"/>
+    <!-- <PasswordInput label="Senha" :model="form.senha" :rules="passwordRules" /> -->
+    <!-- <PasswordInput
       label="Confirmar Senha"
       :model="form.confirmarSenha"
       :rules="passwordConfirmRules"
-    />
-    <div class="row justify-center">
+    />  -->
+    <div class="row justify-center q-my-md q-gutter-md">
+      <q-btn to="/" label="cancelar" color="negative" outline />
       <q-btn label="cadastrar" color="primary" type="submit" />
     </div>
   </q-form>

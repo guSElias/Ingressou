@@ -16,10 +16,13 @@ onMounted(async () => {
 </script>
 <template>
   <q-page class="row items-center justify-evenly q-pa-md">
+    <div class="row justify-between q-my-sm">
+      <span class="text-h5 text-bold">Eventos em Destaque</span>
+    </div>
     <div class="eventos">
       <EventCard :cards="eventos" />
     </div>
-    <q-btn color="primary" label="ver mais" />
+    <q-btn color="primary" label="ver mais" class="q-my-sm" />
   </q-page>
 </template>
 <style lang="scss" scoped>
